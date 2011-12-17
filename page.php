@@ -10,6 +10,18 @@
 
 defined('_JEXEC') or die('Access Denied');
 
+$page = new stdClass();
+$page->option = JRequest::getVar('option');
+$page->controller = JRequest::getVar('controller');
+$page->model = JRequest::getVar('model');
+$page->view = JRequest::getVar('view');
+$page->tmpl = JRequest::getVar('tmpl');
+$page->format = JRequest::getVar('format');
+$page->Itemid = JRequest::getVar('Itemid');
+
+$jchromePage = '<div id="jchrome-page">' . json_encode($page) . '</div>';
+
+/*
 $option = JRequest::getVar('option');
 $controller = JRequest::getVar('controller');
 $model = JRequest::getVar('model');
@@ -18,7 +30,6 @@ $tmpl = JRequest::getVar('tmpl');
 $format = JRequest::getVar('format');
 $Itemid = JRequest::getInt('Itemid');
 //$id = JRequest::getInt('Itemid');
-
 
 //TODO: REALLY rewrite this performance part in nexts versions
 jimport( 'joomla.error.profiler' );				
@@ -61,6 +72,5 @@ $pagefox .='
 . '</fieldset>
 </fieldset>';
 
-
-
 $pagefox .='</div>'; //end
+*/

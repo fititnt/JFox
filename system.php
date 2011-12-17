@@ -11,7 +11,32 @@
 defined('_JEXEC') or die('Access Denied');
 
 
-/*           General info about Joomla                  */
+//URL
+$app = JFactory::GetApplication();
+//$live_site = $app->isAdmin() ? $app->getSiteURL() : JURI::base();
+//$live_site = $app->isAdmin() ? JURI::base() : JURI::base();
+//$app->getCfg('ftp_enable') ? $ftp_enable = JTEXT::_('On') : $ftp_enable = JTEXT::_('Off');
+//$app->getCfg('gzip') ? $gzip = JTEXT::_('On') : $gzip = JTEXT::_('Off');
+//$mailer = $app->getCfg('mailer');
+//$app->getCfg('debug') ? $debug = JTEXT::_('On') : $debug = JTEXT::_('Off');
+//$app->getCfg('offline') ? $offline = JTEXT::_('On') : $offline = JTEXT::_('Off');
+//$lifetime = $app->getCfg('lifetime');
+
+
+$jsystem = new stdClass();
+$jsystem->url = $app->isAdmin() ? JURI::base() : JURI::base();
+$jsystem->offline = $app->getCfg('offline') ? $offline = JTEXT::_('On') : $offline = JTEXT::_('Off');
+$jsystem->debug = $app->getCfg('debug') ? $debug = JTEXT::_('On') : $debug = JTEXT::_('Off');
+$jsystem->sessionLifeTime = $app->getCfg('lifetime');
+$jsystem->mailer = $app->getCfg('mailer');
+$jsystem->gzip = $app->getCfg('gzip') ? $gzip = JTEXT::_('On') : $gzip = JTEXT::_('Off');
+$jsystem->gzip = $app->getCfg('ftp_enable') ? $ftp_enable = JTEXT::_('On') : $ftp_enable = JTEXT::_('Off');
+
+
+$chromesystem = '<div id="jchrome-system">' . json_encode($jsystem) . '</div>';
+
+/*
+///           General info about Joomla         
 //URL
 $app = JFactory::GetApplication();
 //$live_site = $app->isAdmin() ? $app->getSiteURL() : JURI::base();
@@ -40,7 +65,7 @@ JText::_('Lifetime') . ': <strong>' . $lifetime . ' ' . JText::_('minutes') . '<
 '</fieldset>';
 
 
-/*                    Security                            */
+//                    Security
 //Security
 $security = NULL;
 
@@ -101,7 +126,7 @@ $systemfox .= "<fieldset><legend>Security</legend>
 
 
 
-/*                SEO and Performance                   */
+//                SEO and Performance 
 $seoandperformance = NULL;
 //SEF
 if ( $config->get('sef') == 0){
@@ -131,38 +156,6 @@ $systemfox .= "<fieldset><legend>SEO and Performance</legend>
 </fieldset>";
 
 
-
-/*
-$systemfox .= '
-<fieldset><legend> Extensions Version </legend>
-
-<fieldset><legend> Components </legend>
-(still not finished)
-</fieldset>
-
-<fieldset><legend> Modules </legend>
-(still not finished)
-</fieldset>
-
-<fieldset><legend> Plugins </legend>
-(still not finished)
-</fieldset>
-
-</fieldset>';
-
-
-$systemfox .='
-<fieldset><legend>JTS-post : Joomla! Forum Post Assistant</legend>
-Use this feature to make more easy to people on forum know how is your host and improve chance detect problems <br />' .
-'<a href="' . $live_site . 'index.php?option=com_joomlafox&view=jtspostassistant&format=raw" target="_blank"> Generate ' . JTEXT::_('JTS-post : Joomla! Forum Post Assistant') . '</a> (still not finished)<br />
-Please visit <a href="http://forum.joomla.org/viewtopic.php?f=428&t=272481" target="_blank">oficial information about this feature</a>.
-' .
-'</fieldset>';
-
-$systemfox .='
-<fieldset><legend> Server </legend>' .
-
-'<a href="' . $live_site . 'index.php?option=com_joomlafox&view=phpinfo&format=raw" target="_blank">' . JTEXT::_('Open phpinfo() in a new window') . '</a>' .
-'</fieldset>';
-*/
 $systemfox .='</div>';
+
+ */
