@@ -1,15 +1,12 @@
 <?php
+
 /**
- * @version $Id$
- * @package    joomlafox
- * @subpackage plugin
- * @author     Webdesign Engenharia {@link http://www.webdesign.eng.br}
- * @author     Emerson da Rocha Luiz {@link http://www.fititnt.org}
- * @author     Created on 20-Oct-2009
+ * @package     JFox
+ * @author      Emerson Rocha Luiz - emerson at webdesign.eng.br - fititnt
+ * @copyright   Copyright (C) 2011 Webdesign Assessoria em Tecnologia da Informacao. All rights reserved.
+ * @license     GNU General Public License version 3. See license.txt
  */
-
-defined('_JEXEC') or die('Access Denied');
-
+defined('_JEXEC') or die;
 
 $developerfox = '
 <div id="JoomlaFox_3rddeveloper" style="display:none;" >

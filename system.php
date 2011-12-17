@@ -1,14 +1,12 @@
 <?php
-/**
- * @version $Id$
- * @package    joomlafox
- * @subpackage plugin
- * @author     Webdesign Engenharia {@link http://www.webdesign.eng.br}
- * @author     Emerson da Rocha Luiz {@link http://www.fititnt.org}
- * @author     Created on 20-Oct-2009
- */
 
-defined('_JEXEC') or die('Access Denied');
+/**
+ * @package     JFox
+ * @author      Emerson Rocha Luiz - emerson at webdesign.eng.br - fititnt
+ * @copyright   Copyright (C) 2011 Webdesign Assessoria em Tecnologia da Informacao. All rights reserved.
+ * @license     GNU General Public License version 3. See license.txt
+ */
+defined('_JEXEC') or die;
 
 
 //URL
@@ -33,7 +31,7 @@ $jsystem->gzip = $app->getCfg('gzip') ? $gzip = JTEXT::_('On') : $gzip = JTEXT::
 $jsystem->gzip = $app->getCfg('ftp_enable') ? $ftp_enable = JTEXT::_('On') : $ftp_enable = JTEXT::_('Off');
 
 
-$chromesystem = '<div id="jchrome-system">' . json_encode($jsystem) . '</div>';
+$chromesystem = '<div id="jfox-system">' . json_encode($jsystem) . '</div>';
 
 /*
 ///           General info about Joomla         

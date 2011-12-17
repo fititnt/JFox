@@ -1,14 +1,12 @@
 <?php
-/**
- * @version $Id$
- * @package    joomlafox
- * @subpackage plugin
- * @author     Webdesign Engenharia {@link http://www.webdesign.eng.br}
- * @author     Emerson da Rocha Luiz {@link http://www.fititnt.org}
- * @author     Created on 27-Nov-2009
- */
 
-defined('_JEXEC') or die('Access Denied');
+/**
+ * @package     JFox
+ * @author      Emerson Rocha Luiz - emerson at webdesign.eng.br - fititnt
+ * @copyright   Copyright (C) 2011 Webdesign Assessoria em Tecnologia da Informacao. All rights reserved.
+ * @license     GNU General Public License version 3. See license.txt
+ */
+defined('_JEXEC') or die;
 
 $page = new stdClass();
 $page->option = JRequest::getVar('option');
@@ -19,7 +17,7 @@ $page->tmpl = JRequest::getVar('tmpl');
 $page->format = JRequest::getVar('format');
 $page->Itemid = JRequest::getVar('Itemid');
 
-$jchromePage = '<div id="jchrome-page">' . json_encode($page) . '</div>';
+$jfoxPage = '<div id="jfox-page">' . json_encode($page) . '</div>';
 
 /*
 $option = JRequest::getVar('option');
